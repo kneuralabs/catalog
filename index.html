@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="KNEURALABS LLC — Structural AI Governance for U.S. mid-market enterprises. AI risk assessment, governance frameworks, and standards readiness.">
+<meta name="theme-color" content="#1C1B19">
+<title>KNEURALABS LLC · Structural AI Governance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════
+   KNEURALABS BRAND TOKEN SYSTEM — v1.0
+   Brand Guidelines: KN_BRAND_GUIDELINES_1_0.pdf
+═══════════════════════════════════════════════════════ */
+:root {
+  /* Brand Colors */
+  --kn-charcoal:   #1C1B19;
+  --kn-pine:       #7E9B8A;
+  --kn-fjord:      #8DA3B0;
+  --kn-ash:        #5C5A55;
+  --kn-linen:      #F2F1EE;
+  --kn-white:      #FFFFFF;
+  /* Logo Art Colors */
+  --kn-logo-teal:  #468DA3;
+  --kn-logo-crimson: #C5062A;
+  --kn-electric:   #0A98D9;
+  /* Type Scale — Web */
+  --kn-display: 3.75rem;
+  --kn-h1: 2.25rem;
+  --kn-h2: 1.5rem;
+  --kn-h3: 1.125rem;
+  --kn-body: 1rem;
+  --kn-caption: 0.8125rem;
+  --kn-label: 0.6875rem;
+  /* Spacing — 8pt grid */
+  --s4: 4px; --s8: 8px; --s12: 12px; --s16: 16px;
+  --s24: 24px; --s32: 32px; --s48: 48px; --s64: 64px;
+  --s80: 80px; --s96: 96px; --s128: 128px;
+  /* Layout */
+  --max-w: 1200px;
+  --gutter: clamp(24px, 5vw, 80px);
+  /* Animation */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.7s;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', -apple-system, 'SF Pro Text', sans-serif;
+  background: var(--kn-white);
+  color: var(--kn-charcoal);
+  line-height: 1.6;
+  font-size: var(--kn-body);
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul, ol { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ═══════════════════════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════════════════════ */
+.t-display {
+  font-size: clamp(2.25rem, 6vw, var(--kn-display));
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--kn-charcoal);
+}
+.t-h1 {
+  font-size: clamp(1.75rem, 4vw, var(--kn-h1));
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--kn-charcoal);
+}
+.t-h2 {
+  font-size: clamp(1.25rem, 3vw, var(--kn-h2));
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--kn-fjord);
+}
+.t-h3 {
+  font-size: var(--kn-h3);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--kn-ash);
+}
+.t-body { font-size: var(--kn-body); font-weight: 400; line-height: 1.6; }
+.t-caption { font-size: var(--kn-caption); font-weight: 400; color: var(--kn-ash); line-height: 1.5; letter-spacing: 0.01em; }
+.t-label {
+  font-size: var(--kn-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--kn-ash);
+}
+.t-mono { font-family: 'Courier New', monospace; color: var(--kn-pine); }
+
+/* ═══════════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════════ */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.section { padding: var(--s96) 0; }
+.section--linen { background: var(--kn-linen); }
+.section--charcoal {
+  background: var(--kn-charcoal);
+  color: var(--kn-white);
+}
+.section--pine { background: var(--kn-pine); }
+
+/* Divider */
+.kn-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--kn-linen);
+  border: none;
+}
+.kn-rule--pine { background: var(--kn-pine); }
+.kn-rule--charcoal { background: var(--kn-charcoal); }
+
+/* Section label */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--s16);
+  margin-bottom: var(--s48);
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--kn-linen);
+}
+.section--charcoal .section-label::after { background: rgba(242,241,238,0.2); }
+
+/* ═══════════════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--kn-white);
+  border-bottom: 1px solid var(--kn-linen);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.nav.scrolled {
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 var(--gutter);
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--s12);
+  flex-shrink: 0;
+}
+.nav-logo-mark { height: 36px; width: auto; }
+.nav-logo-text {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--kn-charcoal);
+  line-height: 1;
+}
+.nav-logo-sub {
+  font-size: 0.5625rem;
+  font-weight: 500;
+  color: var(--kn-ash);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--s32);
+}
+.nav-links a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--kn-ash);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--kn-charcoal); }
+.nav-cta {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--kn-white) !important;
+  background: var(--kn-charcoal);
+  padding: var(--s8) var(--s24);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s !important;
+}
+.nav-cta:hover { background: var(--kn-pine) !important; color: var(--kn-white) !important; }
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--s8);
+  cursor: pointer;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--kn-charcoal);
+  transition: transform 0.3s var(--ease), opacity 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 64px; left: 0; right: 0; bottom: 0;
+  background: var(--kn-white);
+  padding: var(--s48) var(--gutter);
+  z-index: 99;
+  flex-direction: column;
+  gap: var(--s32);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.4s var(--ease);
+}
+.nav-mobile.open {
+  display: flex;
+  transform: translateX(0);
+}
+.nav-mobile a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--kn-charcoal);
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--kn-linen);
+  padding-bottom: var(--s24);
+  display: block;
+  transition: color 0.2s;
+}
+.nav-mobile a:hover { color: var(--kn-pine); }
+.nav-mobile .nav-cta {
+  font-size: 1rem;
+  padding: var(--s16) var(--s32);
+  text-align: center;
+  border-bottom: none;
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════ */
+#hero {
+  padding-top: calc(64px + var(--s96));
+  padding-bottom: var(--s96);
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s64);
+  align-items: center;
+}
+.hero-content {}
+.hero-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s12);
+  margin-bottom: var(--s32);
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.8s var(--ease) 0.1s forwards;
+}
+.hero-tagline-dot {
+  width: 6px; height: 6px;
+  background: var(--kn-pine);
+  flex-shrink: 0;
+}
+.hero-display {
+  margin-bottom: var(--s32);
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.9s var(--ease) 0.2s forwards;
+}
+.hero-display em {
+  font-style: normal;
+  color: var(--kn-pine);
+}
+.hero-body {
+  margin-bottom: var(--s48);
+  color: var(--kn-ash);
+  max-width: 480px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.9s var(--ease) 0.35s forwards;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s24);
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.9s var(--ease) 0.5s forwards;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s8);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--kn-white);
+  background: var(--kn-charcoal);
+  padding: var(--s16) var(--s32);
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: var(--kn-pine); transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s8);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--kn-ash);
+  border-bottom: 1px solid var(--kn-ash);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.btn-ghost:hover { color: var(--kn-charcoal); border-color: var(--kn-charcoal); }
+
+/* Hero stats */
+.hero-stats {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.9s var(--ease) 0.6s forwards;
+}
+.hero-stats-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s32);
+  padding-top: var(--s48);
+  border-top: 1px solid var(--kn-linen);
+  margin-top: var(--s48);
+}
+.stat-num {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--kn-charcoal);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.stat-label {
+  font-size: var(--kn-caption);
+  color: var(--kn-ash);
+  margin-top: var(--s8);
+  line-height: 1.4;
+}
+
+/* Hero visual panel */
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s16);
+  opacity: 0;
+  transform: translateX(32px);
+  animation: fadeLeft 0.9s var(--ease) 0.4s forwards;
+}
+.hero-visual-card {
+  background: var(--kn-linen);
+  padding: var(--s24) var(--s32);
+  border-left: 3px solid var(--kn-pine);
+  transition: transform 0.3s var(--ease);
+}
+.hero-visual-card:hover { transform: translateX(4px); }
+.hero-visual-card h4 {
+  font-size: var(--kn-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--kn-pine);
+  margin-bottom: var(--s8);
+}
+.hero-visual-card p {
+  font-size: var(--kn-caption);
+  color: var(--kn-ash);
+  line-height: 1.5;
+}
+.hero-visual-card.dark {
+  background: var(--kn-charcoal);
+  border-color: var(--kn-pine);
+}
+.hero-visual-card.dark h4 { color: var(--kn-pine); }
+.hero-visual-card.dark p { color: rgba(242,241,238,0.7); }
+.hero-visual-stds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s8);
+  margin-top: var(--s12);
+}
+.std-pill {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  background: rgba(126,155,138,0.15);
+  color: var(--kn-pine);
+}
+
+/* ═══════════════════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════════════ */
+#services { background: var(--kn-white); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--kn-linen);
+  border-left: 1px solid var(--kn-linen);
+}
+.service-card {
+  padding: var(--s48) var(--s48);
+  border-right: 1px solid var(--kn-linen);
+  border-bottom: 1px solid var(--kn-linen);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s var(--ease);
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--kn-pine);
+  transition: height 0.4s var(--ease);
+}
+.service-card:hover { background: var(--kn-linen); }
+.service-card:hover::before { height: 100%; }
+.service-num {
+  font-family: 'Courier New', monospace;
+  font-size: var(--kn-caption);
+  color: var(--kn-fjord);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--s24);
+  display: block;
+}
+.service-stage {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--kn-pine);
+  margin-bottom: var(--s8);
+  display: block;
+}
+.service-title {
+  font-size: var(--kn-h2);
+  font-weight: 700;
+  color: var(--kn-charcoal);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: var(--s16);
+}
+.service-desc {
+  font-size: var(--kn-caption);
+  color: var(--kn-ash);
+  margin-bottom: var(--s24);
+  line-height: 1.6;
+}
+.service-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s8);
+  margin-bottom: var(--s32);
+}
+.service-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s12);
+  font-size: var(--kn-caption);
+  color: var(--kn-ash);
+}
+.service-feature::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--kn-pine);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.service-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s8);
+  padding-top: var(--s24);
+  border-top: 1px solid var(--kn-linen);
+}
+.service-timing { font-size: var(--kn-caption); color: var(--kn-ash); }
+.service-price {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--kn-charcoal);
+}
+
+/* ═══════════════════════════════════════════════════════
+   JOURNEY
+═══════════════════════════════════════════════════════ */
+#journey { background: var(--kn-charcoal); }
+.journey-header { margin-bottom: var(--s64); }
+.journey-header .t-h1 { color: var(--kn-white); }
+.journey-header .t-body { color: rgba(242,241,238,0.65); margin-top: var(--s16); }
+
+.journey-phases {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(242,241,238,0.12);
+  border-left: 1px solid rgba(242,241,238,0.12);
+}
+.phase {
+  padding: var(--s48) var(--s32);
+  border-right: 1px solid rgba(242,241,238,0.12);
+  border-bottom: 1px solid rgba(242,241,238,0.12);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s var(--ease);
+}
+.phase:hover, .phase.active { background: rgba(126,155,138,0.08); }
+.phase-num {
+  font-family: 'Courier New', monospace;
+  font-size: 0.625rem;
+  color: var(--kn-pine);
+  letter-spacing: 0.15em;
+  margin-bottom: var(--s16);
+  display: block;
+}
+.phase-stage {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(242,241,238,0.4);
+  margin-bottom: var(--s8);
+  display: block;
+}
+.phase-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--kn-white);
+  margin-bottom: var(--s16);
+}
+.phase-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s8);
+  margin-top: var(--s24);
+}
+.phase-tag {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  background: rgba(126,155,138,0.2);
+  color: var(--kn-pine);
+}
+.phase-connector {
+  position: absolute;
+  top: 50%; right: -1px;
+  width: 8px; height: 8px;
+  background: var(--kn-pine);
+  transform: translate(50%, -50%) rotate(45deg);
+  z-index: 1;
+  display: none;
+}
+.journey-phases .phase:not(:last-child) .phase-connector { display: block; }
+
+/* Journey stat bar */
+.journey-proof {
+  margin-top: var(--s64);
+  padding-top: var(--s48);
+  border-top: 1px solid rgba(242,241,238,0.12);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s48);
+}
+.proof-item {}
+.proof-num {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--kn-pine);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.proof-label {
+  font-size: var(--kn-caption);
+  color: rgba(242,241,238,0.55);
+  margin-top: var(--s8);
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════════════════
+   KNEURALENS
+═══════════════════════════════════════════════════════ */
+#methodology { background: var(--kn-white); }
+.lens-header { margin-bottom: var(--s64); }
+.lens-trademark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  margin-bottom: var(--s24);
+}
+.lens-trademark-text {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--kn-charcoal);
+  letter-spacing: -0.03em;
+}
+.lens-trademark-sup {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--kn-pine);
+  vertical-align: super;
+  letter-spacing: 0.05em;
+}
+.lens-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--kn-linen);
+  border-left: 1px solid var(--kn-linen);
+  margin-bottom: var(--s64);
+}
+.lens-stage {
+  padding: var(--s48) var(--s32);
+  border-right: 1px solid var(--kn-linen);
+  border-bottom: 1px solid var(--kn-linen);
+  position: relative;
+  overflow: hidden;
+}
+.lens-stage-num {
+  font-family: 'Courier New', monospace;
+  font-size: 0.625rem;
+  color: var(--kn-fjord);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--s16);
+  display: block;
+}
+.lens-stage-title {
+  font-size: var(--kn-h3);
+  font-weight: 700;
+  color: var(--kn-charcoal);
+  margin-bottom: var(--s8);
+}
+.lens-stage-sub {
+  font-size: var(--kn-caption);
+  color: var(--kn-ash);
+  line-height: 1.5;
+}
+.lens-stage-bar {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px;
+  background: var(--kn-pine);
+  width: 0;
+  transition: width 0.6s var(--ease);
+}
+.lens-stage:hover .lens-stage-bar { width: 100%; }
+
+/* Insight callout */
+.lens-insight {
+  background: var(--kn-linen);
+  padding: var(--s48);
+  border-left: 3px solid var(--kn-pine);
+}
+.lens-insight-num {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  color: var(--kn-pine);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: var(--s16);
+}
+.lens-insight-text {
+  font-size: var(--kn-h3);
+  font-weight: 400;
+  color: var(--kn-charcoal);
+  line-height: 1.5;
+  max-width: 580px;
+}
+.lens-insight-text strong { font-weight: 700; }
+
+/* ═══════════════════════════════════════════════════════
+   INDUSTRIES
+═══════════════════════════════════════════════════════ */
+#industries { background: var(--kn-linen); }
+.industries-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(28,27,25,0.15);
+  margin-bottom: var(--s48);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.industry-tab {
+  font-size: var(--kn-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--kn-ash);
+  padding: var(--s16) var(--s32);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.industry-tab.active {
+  color: var(--kn-charcoal);
+  border-bottom-color: var(--kn-pine);
+}
+.industry-tab:hover { color: var(--kn-charcoal); }
+.industry-panel { display: none; }
+.industry-panel.active { display: block; }
+.industry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s64);
+  align-items: start;
+}
+.industry-main {}
+.industry-kicker {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--kn-pine);
+  margin-bottom: var(--s16);
+  display: block;
+}
+.industry-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--kn-charcoal);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s24);
+  line-height: 1.2;
+}
+.industry-standards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s8);
+  margin-bottom: var(--s32);
+}
+.std-badge {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  background: rgba(28,27,25,0.08);
+  color: var(--kn-charcoal);
+}
+.industry-body {
+  font-size: var(--kn-caption);
+  color: var(--kn-ash);
+  line-height: 1.6;
+  margin-bottom: var(--s32);
+}
+.industry-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s24);
+}
+.industry-item {}
+.industry-item-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--kn-charcoal);
+  margin-bottom: var(--s8);
+}
+.industry-item-body {
+  font-size: var(--kn-caption);
+  color: var(--kn-ash);
+  line-height: 1.55;
+}
+.industry-sidebar {}
+.industry-approach {
+  background: var(--kn-charcoal);
+  padding: var(--s32);
+}
+.industry-approach-label {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--kn-pine);
+  margin-bottom: var(--s16);
+  display: block;
+}
+.industry-approach-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(242,241,238,0.85);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RISK CALCULATOR
+═══════════════════════════════════════════════════════ */
+#roi { background: var(--kn-white); }
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s64);
+  align-items: start;
+}
+.calc-inputs { display: flex; flex-direction: column; gap: var(--s32); }
+.calc-field {}
+.calc-label {
+  font-size: var(--kn-caption);
+  font-weight: 700;
+  color: var(--kn-charcoal);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--s12);
+  display: block;
+}
+.calc-slider-wrap { position: relative; }
+.calc-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: var(--kn-linen);
+  outline: none;
+  cursor: pointer;
+  border-radius: 0;
+}
+.calc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px; height: 16px;
+  background: var(--kn-charcoal);
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.2s;
+}
+.calc-slider::-moz-range-thumb {
+  width: 16px; height: 16px;
+  background: var(--kn-charcoal);
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+}
+.calc-slider:hover::-webkit-slider-thumb { background: var(--kn-pine); }
+.calc-val {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: var(--kn-pine);
+  font-weight: 700;
+  margin-top: var(--s8);
+}
+.calc-select {
+  width: 100%;
+  padding: var(--s12) var(--s16);
+  font-family: 'Inter', sans-serif;
+  font-size: var(--kn-caption);
+  font-weight: 500;
+  color: var(--kn-charcoal);
+  background: var(--kn-white);
+  border: 1px solid var(--kn-linen);
+  border-radius: 0;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C5A55' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+}
+.calc-results { display: flex; flex-direction: column; gap: var(--s16); }
+.calc-result {
+  background: var(--kn-linen);
+  padding: var(--s32);
+  border-left: 3px solid var(--kn-linen);
+  transition: border-color 0.3s;
+}
+.calc-result.danger { border-color: var(--kn-logo-crimson); }
+.calc-result.warning { border-color: var(--kn-fjord); }
+.calc-result.solution { border-color: var(--kn-pine); }
+.calc-result-label {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--kn-ash);
+  margin-bottom: var(--s12);
+  display: block;
+}
+.calc-result-val {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--kn-charcoal);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  transition: color 0.3s;
+}
+.calc-result.danger .calc-result-val { color: var(--kn-logo-crimson); }
+.calc-result.solution .calc-result-val { color: var(--kn-pine); }
+.calc-disclaimer {
+  font-size: 0.625rem;
+  color: var(--kn-ash);
+  margin-top: var(--s24);
+  line-height: 1.6;
+  padding-top: var(--s16);
+  border-top: 1px solid var(--kn-linen);
+}
+
+/* ═══════════════════════════════════════════════════════
+   CTA
+═══════════════════════════════════════════════════════ */
+#cta { background: var(--kn-charcoal); padding: var(--s96) 0; }
+.cta-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s64);
+  align-items: center;
+}
+.cta-text {}
+.cta-kicker {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--kn-pine);
+  margin-bottom: var(--s24);
+  display: block;
+}
+.cta-headline {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--kn-white);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: var(--s16);
+}
+.cta-sub {
+  font-size: var(--kn-caption);
+  color: rgba(242,241,238,0.6);
+  line-height: 1.6;
+}
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s16);
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.btn-primary-light {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s8);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--kn-charcoal);
+  background: var(--kn-white);
+  padding: var(--s16) var(--s32);
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.btn-primary-light:hover { background: var(--kn-pine); color: var(--kn-white); }
+.cta-contact { font-size: var(--kn-caption); color: rgba(242,241,238,0.5); }
+.cta-contact a { color: var(--kn-pine); border-bottom: 1px solid rgba(126,155,138,0.4); transition: color 0.2s; }
+.cta-contact a:hover { color: var(--kn-white); }
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════ */
+footer {
+  background: var(--kn-charcoal);
+  border-top: 1px solid rgba(242,241,238,0.1);
+  padding: var(--s48) 0;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s32);
+  align-items: center;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s12);
+}
+.footer-brand-text {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--kn-white);
+}
+.footer-meta { font-size: 0.625rem; color: rgba(242,241,238,0.35); margin-top: 4px; }
+.footer-right { text-align: right; }
+.footer-legal {
+  font-size: 0.625rem;
+  color: rgba(242,241,238,0.3);
+  line-height: 1.8;
+}
+.footer-legal a { color: rgba(242,241,238,0.45); transition: color 0.2s; }
+.footer-legal a:hover { color: var(--kn-pine); }
+
+/* ═══════════════════════════════════════════════════════
+   LOGO SVG — INLINE
+═══════════════════════════════════════════════════════ */
+.kn-logo-svg { height: 100%; width: auto; display: block; }
+
+/* ═══════════════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes lineGrow {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Pine line accent */
+.pine-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--kn-pine);
+  margin-bottom: var(--s32);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — TABLET
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: var(--s48); }
+  .hero-visual { transform: translateX(0); animation-name: fadeUp; }
+  .services-grid { grid-template-columns: 1fr; }
+  .journey-phases { grid-template-columns: repeat(2, 1fr); }
+  .lens-grid { grid-template-columns: repeat(2, 1fr); }
+  .industry-grid { grid-template-columns: 1fr; gap: var(--s32); }
+  .calc-grid { grid-template-columns: 1fr; }
+  .cta-inner { grid-template-columns: 1fr; }
+  .cta-actions { flex-direction: row; flex-wrap: wrap; }
+  .journey-proof { grid-template-columns: repeat(3, 1fr); }
+  .hero-stats-inner { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root {
+    --s96: 64px;
+    --s64: 40px;
+    --s48: 32px;
+  }
+  .section { padding: var(--s64) 0; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  #hero { min-height: 100svh; padding-top: calc(64px + var(--s64)); }
+  .hero-stats-inner { grid-template-columns: repeat(3, 1fr); gap: var(--s16); }
+  .stat-num { font-size: 1.5rem; }
+  .journey-phases { grid-template-columns: 1fr; }
+  .phase-connector { display: none !important; }
+  .lens-grid { grid-template-columns: 1fr; }
+  .journey-proof { grid-template-columns: 1fr; gap: var(--s32); }
+  .footer-inner { grid-template-columns: 1fr; gap: var(--s24); }
+  .footer-right { text-align: left; }
+  .industries-tabs { gap: 0; }
+  .industry-tab { padding: var(--s12) var(--s16); }
+  .services-grid { border-left: none; }
+  .service-card { border-left: none; padding: var(--s32) 0; border-right: none; }
+  .lens-grid { border-left: none; }
+  .lens-stage { border-left: none; padding: var(--s32) 0; border-right: none; }
+  .journey-phases { border-left: none; }
+  .phase { border-left: none; border-right: none; padding: var(--s32) 0; }
+  .hero-visual-card { padding: var(--s16) var(--s24); }
+  .cta-inner { gap: var(--s32); }
+  .cta-actions { flex-direction: column; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   LANDSCAPE MOBILE
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) and (orientation: landscape) {
+  #hero {
+    min-height: auto;
+    padding-top: calc(64px + 40px);
+    padding-bottom: 40px;
+  }
+  .hero-stats-inner { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   PRINT / REDUCED MOTION
+═══════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .hero-tagline, .hero-display, .hero-body, .hero-actions,
+  .hero-stats, .hero-visual { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="KNEURALABS LLC">
+      <div class="nav-logo-mark" style="height:36px;width:36px;flex-shrink:0;">
+        <!-- KNeuraLabs Art Mark — transparent background SVG -->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" style="height:36px;width:36px;">
+          <circle cx="50" cy="50" r="48" fill="none"/>
+          <!-- Left half: Logo Teal #468DA3 -->
+          <path d="M50 2 A48 48 0 0 0 50 98 Z" fill="#468DA3"/>
+          <!-- Top-right: Logo Crimson #C5062A -->
+          <path d="M50 2 A48 48 0 0 1 98 50 L50 50 Z" fill="#C5062A"/>
+          <!-- Bottom-right: Electric Blue #0A98D9 -->
+          <path d="M98 50 A48 48 0 0 1 50 98 L50 50 Z" fill="#0A98D9"/>
+        </svg>
+      </div>
+      <div>
+        <div class="nav-logo-text">KNEURALABS</div>
+        <span class="nav-logo-sub">LLC</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#journey">Journey</a>
+      <a href="#methodology">KneuraLens™</a>
+      <a href="#industries">Industries</a>
+      <a href="#roi">Risk Calc</a>
+      <a href="mailto:hello@kneuralabs.com" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#journey" class="mobile-link">Journey</a>
+  <a href="#methodology" class="mobile-link">KneuraLens™</a>
+  <a href="#industries" class="mobile-link">Industries</a>
+  <a href="#roi" class="mobile-link">Risk Calculator</a>
+  <a href="mailto:hello@kneuralabs.com" class="nav-cta">Book a Call →</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tagline">
+          <div class="hero-tagline-dot"></div>
+          <span class="t-label">Structural AI Governance · U.S. Mid-Market</span>
+        </div>
+        <h1 class="t-display hero-display">
+          Your AI runs.<br><em>Who governs it?</em>
+        </h1>
+        <p class="t-body hero-body">
+          Most mid-market companies are running AI they have never formally inventoried. KNEURALABS LLC builds the governance your board can read, your regulators can audit, and your enterprise clients will demand.
+        </p>
+        <div class="hero-actions">
+          <a href="#services" class="btn-primary">See Services →</a>
+          <a href="#roi" class="btn-ghost">Estimate Your Exposure</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stats-inner">
+            <div class="stat">
+              <div class="stat-num" data-target="73">0<span>%</span></div>
+              <p class="stat-label">of mid-market companies run AI they have never inventoried</p>
+            </div>
+            <div class="stat">
+              <div class="stat-num">$4.2M</div>
+              <p class="stat-label">average cost of an AI-related regulatory fine or settlement</p>
+            </div>
+            <div class="stat">
+              <div class="stat-num" data-target="61">0<span>%</span></div>
+              <p class="stat-label">of enterprise buyers now require AI governance evidence</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-card dark">
+          <h4>Standards Coverage</h4>
+          <p>Every engagement is aligned to your target framework from day one.</p>
+          <div class="hero-visual-stds">
+            <span class="std-pill">NIST AI RMF</span>
+            <span class="std-pill">ISO/IEC 42001</span>
+            <span class="std-pill">EU AI Act</span>
+            <span class="std-pill">SOC 2</span>
+            <span class="std-pill">UK AI Essentials</span>
+          </div>
+        </div>
+        <div class="hero-visual-card">
+          <h4>What We Deliver</h4>
+          <p>Board-ready documentation, audit-ready evidence packs, and governance your enterprise clients will accept.</p>
+        </div>
+        <div class="hero-visual-card">
+          <h4>Who We Serve</h4>
+          <p>U.S. mid-market enterprises — CROs, CTOs, General Counsel, AI programme leads.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="t-label">02 · Services</span>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <span class="pine-line"></span>
+      <h2 class="t-h1" style="margin-bottom:var(--s16);">Three Services. One Path.</h2>
+      <p class="t-body" style="color:var(--kn-ash);max-width:560px;margin-bottom:var(--s48);">Standalone or bundled. Built around how your business runs.</p>
+    </div>
+    <div class="services-grid">
+      <!-- S1 -->
+      <div class="service-card reveal">
+        <span class="service-num">S1</span>
+        <span class="service-stage">See</span>
+        <h3 class="service-title">AI Risk Assessment</h3>
+        <p class="service-desc">Know what you are running and what it could cost you. Full inventory, risk register, and board-ready summary.</p>
+        <ul class="service-features">
+          <li class="service-feature">Full AI system inventory and risk profiles</li>
+          <li class="service-feature">Plain-language risk register</li>
+          <li class="service-feature">Risks ranked by likelihood and severity</li>
+          <li class="service-feature">Prioritised remediation roadmap</li>
+          <li class="service-feature">Board-ready executive summary</li>
+          <li class="service-feature">NIST AI RMF alignment mapping</li>
+        </ul>
+        <div class="service-meta">
+          <span class="service-timing t-caption">2–4 weeks</span>
+          <span class="service-price">From $8,000</span>
+        </div>
+      </div>
+      <!-- S2 -->
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">S2</span>
+        <span class="service-stage">Structure</span>
+        <h3 class="service-title">Governance Framework Setup</h3>
+        <p class="service-desc">Build the policies and controls that govern every AI decision — from procurement to decommission.</p>
+        <ul class="service-features">
+          <li class="service-feature">Customised AI governance policy set</li>
+          <li class="service-feature">Defined roles, responsibilities, escalation paths</li>
+          <li class="service-feature">AI lifecycle controls: procurement to decommission</li>
+          <li class="service-feature">Monitoring cadence and reporting templates</li>
+          <li class="service-feature">NIST AI RMF and ISO/IEC 42001 alignment</li>
+        </ul>
+        <div class="service-meta">
+          <span class="service-timing t-caption">4–8 weeks</span>
+          <span class="service-price">From $15,000</span>
+        </div>
+      </div>
+      <!-- S3 -->
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-num">S3</span>
+        <span class="service-stage">Prove</span>
+        <h3 class="service-title">AI Standards Readiness</h3>
+        <p class="service-desc">Verify your governance meets your target standard. Close every documented gap with audit-ready evidence packs.</p>
+        <ul class="service-features">
+          <li class="service-feature">KneuraLens™ readiness assessment</li>
+          <li class="service-feature">Complete gap register with ownership assigned</li>
+          <li class="service-feature">Prioritised gap-closure roadmap</li>
+          <li class="service-feature">Audit-ready policies and evidence packs</li>
+          <li class="service-feature">Alignment to NIST, ISO/IEC 42001, UK AI Essentials</li>
+        </ul>
+        <div class="service-meta">
+          <span class="service-timing t-caption">4–10 weeks</span>
+          <span class="service-price">From $12,000</span>
+        </div>
+      </div>
+      <!-- S4 -->
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-num">S4</span>
+        <span class="service-stage">Sustain</span>
+        <h3 class="service-title">AI Governance Retainer</h3>
+        <p class="service-desc">Ongoing governance as your AI evolves. Quarterly reviews, policy updates, and annual reassessments.</p>
+        <ul class="service-features">
+          <li class="service-feature">Quarterly governance health reviews</li>
+          <li class="service-feature">Policy updates as regulations change</li>
+          <li class="service-feature">New AI system intake: up to 4 per quarter</li>
+          <li class="service-feature">Annual KneuraLens™ reassessment</li>
+          <li class="service-feature">Board-ready quarterly governance report</li>
+        </ul>
+        <div class="service-meta">
+          <span class="service-timing t-caption">Annual engagement</span>
+          <span class="service-price">From $18,000/yr</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ JOURNEY ═══ -->
+<section id="journey" class="section section--charcoal">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="t-label" style="color:rgba(242,241,238,0.5);">04 · The Governance Journey</span>
+    </div>
+    <div class="journey-header reveal reveal-delay-1">
+      <span class="pine-line"></span>
+      <h2 class="t-h1" style="color:var(--kn-white);">From Zero Governance to Full Certification.</h2>
+      <p class="t-body" style="color:rgba(242,241,238,0.6);max-width:560px;margin-top:var(--s16);">A programme, not a project. Each phase builds on the last.</p>
+    </div>
+    <div class="journey-phases reveal reveal-delay-2">
+      <div class="phase active">
+        <span class="phase-num">01</span>
+        <span class="phase-stage">See</span>
+        <div class="phase-title">AI Risk Assessment</div>
+        <p class="t-caption" style="color:rgba(242,241,238,0.55);">Know every AI system and what it could cost if left unexamined.</p>
+        <p class="t-caption" style="color:rgba(242,241,238,0.35);margin-top:var(--s16);">2–4 weeks · From $8,000</p>
+        <div class="phase-tags">
+          <span class="phase-tag">AI Inventory</span>
+          <span class="phase-tag">Risk Register</span>
+          <span class="phase-tag">NIST Mapping</span>
+          <span class="phase-tag">Board Summary</span>
+        </div>
+        <div class="phase-connector"></div>
+      </div>
+      <div class="phase">
+        <span class="phase-num">02</span>
+        <span class="phase-stage">Structure</span>
+        <div class="phase-title">Governance Framework Setup</div>
+        <p class="t-caption" style="color:rgba(242,241,238,0.55);">Build policies, roles, and controls that govern every AI decision.</p>
+        <p class="t-caption" style="color:rgba(242,241,238,0.35);margin-top:var(--s16);">4–8 weeks · From $15,000</p>
+        <div class="phase-tags">
+          <span class="phase-tag">Policy Set</span>
+          <span class="phase-tag">Roles & Ownership</span>
+          <span class="phase-tag">Lifecycle Controls</span>
+          <span class="phase-tag">ISO 42001</span>
+        </div>
+        <div class="phase-connector"></div>
+      </div>
+      <div class="phase">
+        <span class="phase-num">03</span>
+        <span class="phase-stage">Prove</span>
+        <div class="phase-title">AI Standards Readiness</div>
+        <p class="t-caption" style="color:rgba(242,241,238,0.55);">Verify governance meets your target standard and close every gap.</p>
+        <p class="t-caption" style="color:rgba(242,241,238,0.35);margin-top:var(--s16);">4–10 weeks · From $12,000</p>
+        <div class="phase-tags">
+          <span class="phase-tag">KneuraLens™</span>
+          <span class="phase-tag">Gap Register</span>
+          <span class="phase-tag">Evidence Pack</span>
+          <span class="phase-tag">Audit Ready</span>
+        </div>
+        <div class="phase-connector"></div>
+      </div>
+      <div class="phase">
+        <span class="phase-num">04</span>
+        <span class="phase-stage">Sustain</span>
+        <div class="phase-title">AI Governance Retainer</div>
+        <p class="t-caption" style="color:rgba(242,241,238,0.55);">Run governance independently as AI and regulation continues to evolve.</p>
+        <p class="t-caption" style="color:rgba(242,241,238,0.35);margin-top:var(--s16);">Annual · From $18,000/yr</p>
+        <div class="phase-tags">
+          <span class="phase-tag">Quarterly Reviews</span>
+          <span class="phase-tag">New AI Intake</span>
+          <span class="phase-tag">Annual Reassessment</span>
+          <span class="phase-tag">Board Reports</span>
+        </div>
+      </div>
+    </div>
+    <div class="journey-proof reveal reveal-delay-3">
+      <div class="proof-item">
+        <div class="proof-num">11</div>
+        <p class="proof-label">Average AI systems discovered per client. Most think they have 3–5.</p>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">200+</div>
+        <p class="proof-label">Mid-market engagements powering our KneuraLens™ scoring model.</p>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">100%</div>
+        <p class="proof-label">Of our evidence packs are structured for your target standard from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KNEURALENS ═══ -->
+<section id="methodology" class="section">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="t-label">05 · Methodology</span>
+    </div>
+    <div class="lens-header reveal reveal-delay-1">
+      <span class="pine-line"></span>
+      <div class="lens-trademark">
+        <span class="lens-trademark-text">KneuraLens</span>
+        <span class="lens-trademark-sup">™</span>
+      </div>
+      <p class="t-body" style="color:var(--kn-ash);max-width:600px;margin-top:var(--s16);">Our proprietary four-stage assessment framework. Where generic checklists produce generic outputs, KneuraLens™ produces a governance programme calibrated to your systems, your industry, and your target standard.</p>
+    </div>
+    <div class="lens-grid reveal reveal-delay-2">
+      <div class="lens-stage">
+        <span class="lens-stage-num">01</span>
+        <div class="lens-stage-title">Discover</div>
+        <p class="lens-stage-sub">Map every AI system — built, bought, embedded, and shadow AI your teams adopted without approval.</p>
+        <div class="lens-stage-bar"></div>
+      </div>
+      <div class="lens-stage">
+        <span class="lens-stage-num">02</span>
+        <div class="lens-stage-title">Diagnose</div>
+        <p class="lens-stage-sub">Evaluate governance maturity. Score risks by likelihood × severity. Identify standards alignment gaps.</p>
+        <div class="lens-stage-bar"></div>
+      </div>
+      <div class="lens-stage">
+        <span class="lens-stage-num">03</span>
+        <div class="lens-stage-title">Design</div>
+        <p class="lens-stage-sub">Build a prioritised roadmap calibrated to your target standard with ownership assigned to every item.</p>
+        <div class="lens-stage-bar"></div>
+      </div>
+      <div class="lens-stage">
+        <span class="lens-stage-num">04</span>
+        <div class="lens-stage-title">Deliver</div>
+        <p class="lens-stage-sub">Hand over audit-ready documentation. Evidence packs structured for your target standard, ready for review.</p>
+        <div class="lens-stage-bar"></div>
+      </div>
+    </div>
+    <div class="lens-insight reveal reveal-delay-3">
+      <div class="lens-insight-num">11</div>
+      <p class="lens-insight-text">The average discovery reveals <strong>11 AI systems</strong>. Most clients think they have 3–5. You cannot govern what you cannot see.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INDUSTRIES ═══ -->
+<section id="industries" class="section section--linen">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="t-label">06 · Industries</span>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <span class="pine-line"></span>
+      <h2 class="t-h1" style="margin-bottom:var(--s48);">Your Sector. Your Requirements.</h2>
+    </div>
+    <div class="industries-tabs reveal reveal-delay-2">
+      <button class="industry-tab active" data-panel="healthcare">Healthcare</button>
+      <button class="industry-tab" data-panel="financial">Financial Services</button>
+      <button class="industry-tab" data-panel="professional">Professional &amp; B2B</button>
+    </div>
+
+    <!-- Healthcare -->
+    <div class="industry-panel active" id="panel-healthcare">
+      <div class="industry-grid">
+        <div class="industry-main">
+          <span class="industry-kicker">Healthcare &amp; Life Sciences</span>
+          <h3 class="industry-title">FDA AI/ML Guidance. HIPAA. ONC. CMS.</h3>
+          <div class="industry-standards">
+            <span class="std-badge">FDA AI/ML SaMD</span>
+            <span class="std-badge">HIPAA</span>
+            <span class="std-badge">ONC Interoperability</span>
+            <span class="std-badge">CMS Requirements</span>
+          </div>
+          <p class="industry-body">AI in clinical decision support requires documented risk classification before deployment. Patient data processed by vendor AI constitutes covered entity risk under HIPAA. CMS and payers increasingly require AI governance evidence before contract award.</p>
+          <div class="industry-items">
+            <div class="industry-item">
+              <div class="industry-item-title">FDA AI/ML SaMD Guidance</div>
+              <p class="industry-item-body">Software as a Medical Device frameworks require documented change control and risk classification for AI-driven clinical tools.</p>
+            </div>
+            <div class="industry-item">
+              <div class="industry-item-title">HIPAA AI Accountability</div>
+              <p class="industry-item-body">Third-party AI vendors processing PHI extend your covered entity obligations. Most mid-market healthcare companies have unexamined exposure here.</p>
+            </div>
+            <div class="industry-item">
+              <div class="industry-item-title">ONC &amp; CMS Requirements</div>
+              <p class="industry-item-body">Interoperability rules increasingly touch AI-powered data exchange. CMS contracting now includes AI governance as a procurement signal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="industry-sidebar">
+          <div class="industry-approach">
+            <span class="industry-approach-label">Our Approach</span>
+            <p class="industry-approach-title">We align your AI inventory and controls to FDA AI/ML SaMD guidance and HIPAA administrative safeguard requirements, giving your compliance team audit-ready documentation your examiners will accept.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Financial -->
+    <div class="industry-panel" id="panel-financial">
+      <div class="industry-grid">
+        <div class="industry-main">
+          <span class="industry-kicker">Financial Services</span>
+          <h3 class="industry-title">CFPB. OCC SR 11-7. SEC AI Disclosures.</h3>
+          <div class="industry-standards">
+            <span class="std-badge">CFPB AI Fairness</span>
+            <span class="std-badge">OCC SR 11-7</span>
+            <span class="std-badge">SEC Disclosures</span>
+            <span class="std-badge">Enforcement Actions</span>
+          </div>
+          <p class="industry-body">Credit, underwriting, and fraud models require explainability documentation for regulatory review. Model risk management extends to third-party AI — not just internal models. Regulators are actively issuing AI-specific enforcement actions.</p>
+          <div class="industry-items">
+            <div class="industry-item">
+              <div class="industry-item-title">OCC SR 11-7 Model Risk</div>
+              <p class="industry-item-body">The OCC's model risk management guidance now applies to third-party AI, not just internally developed models. Vendor AI is your risk.</p>
+            </div>
+            <div class="industry-item">
+              <div class="industry-item-title">CFPB AI Fairness Guidance</div>
+              <p class="industry-item-body">CFPB expects explainability for adverse action decisions made using AI. Documentation gaps are enforcement vulnerabilities.</p>
+            </div>
+            <div class="industry-item">
+              <div class="industry-item-title">SEC AI Disclosure Requirements</div>
+              <p class="industry-item-body">Public companies face increasing SEC scrutiny on AI use disclosure. Material AI risk must be identified, assessed, and documented.</p>
+            </div>
+          </div>
+        </div>
+        <div class="industry-sidebar">
+          <div class="industry-approach">
+            <span class="industry-approach-label">Our Approach</span>
+            <p class="industry-approach-title">We map your AI systems to SR 11-7 model risk principles and CFPB fair lending requirements, producing the documentation your examiners will ask for — before they ask for it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional -->
+    <div class="industry-panel" id="panel-professional">
+      <div class="industry-grid">
+        <div class="industry-main">
+          <span class="industry-kicker">Professional &amp; B2B Services</span>
+          <h3 class="industry-title">ISO 42001 in RFPs. Enterprise Procurement. Client Confidentiality.</h3>
+          <div class="industry-standards">
+            <span class="std-badge">ISO/IEC 42001</span>
+            <span class="std-badge">Enterprise Procurement</span>
+            <span class="std-badge">Client Confidentiality</span>
+          </div>
+          <p class="industry-body">Enterprise clients are adding AI governance clauses to vendor contracts as pass/fail criteria. Legal and consulting firms face confidentiality exposure from AI tools used on matters. ISO 42001 is appearing in procurement questionnaires.</p>
+          <div class="industry-items">
+            <div class="industry-item">
+              <div class="industry-item-title">ISO/IEC 42001 Readiness</div>
+              <p class="industry-item-body">Increasingly a pass/fail criterion in enterprise RFPs. We prepare you for the standard, including full gap closure and evidence documentation.</p>
+            </div>
+            <div class="industry-item">
+              <div class="industry-item-title">Enterprise Procurement</div>
+              <p class="industry-item-body">61% of enterprise procurement teams require AI governance evidence before awarding contracts. We build the evidence pack they need to see.</p>
+            </div>
+            <div class="industry-item">
+              <div class="industry-item-title">Client Data &amp; Confidentiality</div>
+              <p class="industry-item-body">AI tools used on client matters create confidentiality obligations your engagement letters likely do not cover. We map and close the gap.</p>
+            </div>
+          </div>
+        </div>
+        <div class="industry-sidebar">
+          <div class="industry-approach">
+            <span class="industry-approach-label">Our Approach</span>
+            <p class="industry-approach-title">We build a governance programme that produces the evidence pack your enterprise clients are asking for — and positions you ahead of competitors who cannot answer the same questions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RISK CALCULATOR ═══ -->
+<section id="roi" class="section">
+  <div class="container">
+    <div class="section-label reveal">
+      <span class="t-label">07 · Risk Pressure Calculator</span>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <span class="pine-line"></span>
+      <h2 class="t-h1" style="margin-bottom:var(--s16);">Estimate Your Exposure.</h2>
+      <p class="t-body" style="color:var(--kn-ash);max-width:560px;margin-bottom:var(--s48);">Adjust the inputs below to see a calibrated estimate of your regulatory and commercial risk exposure. This is a directional model, not a legal assessment.</p>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-inputs reveal reveal-delay-2">
+        <div class="calc-field">
+          <label class="calc-label" for="aiCount">Number of AI systems in use</label>
+          <div class="calc-slider-wrap">
+            <input type="range" class="calc-slider" id="aiCount" min="1" max="50" value="8" aria-valuemin="1" aria-valuemax="50" aria-valuenow="8">
+          </div>
+          <div class="calc-val" id="aiCountVal">8 systems</div>
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="headcount">Company headcount</label>
+          <div class="calc-slider-wrap">
+            <input type="range" class="calc-slider" id="headcount" min="10" max="2000" step="10" value="200" aria-valuemin="10" aria-valuemax="2000">
+          </div>
+          <div class="calc-val" id="headcountVal">200 employees</div>
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="sectorSel">Industry sector</label>
+          <select class="calc-select" id="sectorSel">
+            <option value="healthcare">Healthcare / Life Sciences</option>
+            <option value="finance">Financial Services</option>
+            <option value="professional" selected>Professional / B2B Services</option>
+            <option value="tech">Technology / SaaS</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label class="calc-label" for="months">Months without formal AI governance</label>
+          <div class="calc-slider-wrap">
+            <input type="range" class="calc-slider" id="months" min="0" max="60" value="18" aria-valuemin="0" aria-valuemax="60">
+          </div>
+          <div class="calc-val" id="monthsVal">18 months</div>
+        </div>
+      </div>
+      <div class="calc-results reveal reveal-delay-3">
+        <div class="calc-result danger">
+          <span class="calc-result-label">Estimated Regulatory Exposure</span>
+          <div class="calc-result-val" id="regExposure">$1.2M–$3.6M</div>
+          <p class="t-caption" style="margin-top:var(--s8);">Potential fine / legal settlement range</p>
+        </div>
+        <div class="calc-result warning">
+          <span class="calc-result-label">Contracts at Risk</span>
+          <div class="calc-result-val" id="contractsRisk">4–7</div>
+          <p class="t-caption" style="margin-top:var(--s8);">Enterprise procurement relationships potentially affected</p>
+        </div>
+        <div class="calc-result solution">
+          <span class="calc-result-label">Governance Investment to Close Gaps</span>
+          <div class="calc-result-val" id="govInvestment">$27,000–$35,000</div>
+          <p class="t-caption" style="margin-top:var(--s8);">Indicative programme cost (S1+S2+S3)</p>
+        </div>
+        <p class="calc-disclaimer">This is a directional risk model for illustrative purposes, not legal or financial advice. Actual exposure depends on jurisdiction, regulatory circumstances, and specific AI system characteristics. Based on IBM Cost of AI Risk Report 2024 and Forrester enterprise procurement data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="cta-text">
+        <span class="cta-kicker">08 · Get Started</span>
+        <h2 class="cta-headline">30 Minutes.<br>No Commitment.<br>No Sales Pitch.</h2>
+        <p class="cta-sub">A scoping call is all it takes to get a clear, reasoned estimate for your programme. Tell us what you are running — we will tell you where to start.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="mailto:hello@kneuralabs.com" class="btn-primary-light">Email hello@kneuralabs.com</a>
+        <a href="https://www.kneuralabs.com" target="_blank" rel="noopener" class="btn-primary-light" style="background:var(--kn-pine);color:var(--kn-white);">Visit Website →</a>
+        <p class="cta-contact">345 Buckland Hills Drive · Manchester, CT 06042</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div style="height:28px;width:28px;flex-shrink:0;">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="height:28px;width:28px;" aria-hidden="true">
+            <path d="M50 2 A48 48 0 0 0 50 98 Z" fill="#468DA3"/>
+            <path d="M50 2 A48 48 0 0 1 98 50 L50 50 Z" fill="#C5062A"/>
+            <path d="M98 50 A48 48 0 0 1 50 98 L50 50 Z" fill="#0A98D9"/>
+          </svg>
+        </div>
+        <div>
+          <div class="footer-brand-text">KNEURALABS LLC</div>
+          <p class="footer-meta">Structural AI Governance · Manchester, CT 06042</p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p class="footer-legal">
+          © 2026 Kneuralabs LLC · All rights reserved<br>
+          <a href="mailto:hello@kneuralabs.com">hello@kneuralabs.com</a> · <a href="https://www.kneuralabs.com" target="_blank" rel="noopener">www.kneuralabs.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   NAV — scroll + hamburger
+═══════════════════════════════════════════════════════ */
+const nav = document.getElementById('mainNav');
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open);
+  if (open) {
+    mobileMenu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  } else {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+document.querySelectorAll('.mobile-link, .nav-mobile .nav-cta').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+/* ═══════════════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════════════ */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+/* ═══════════════════════════════════════════════════════
+   STAT COUNTER ANIMATION
+═══════════════════════════════════════════════════════ */
+function animateCounter(el, target, suffix) {
+  let start = 0;
+  const dur = 1400;
+  const startTime = performance.now();
+  function step(now) {
+    const p = Math.min((now - startTime) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(eased * target) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const t = parseInt(el.getAttribute('data-target'));
+      animateCounter(el, t, '%');
+      statsObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => statsObs.observe(el));
+
+/* ═══════════════════════════════════════════════════════
+   INDUSTRY TABS
+═══════════════════════════════════════════════════════ */
+document.querySelectorAll('.industry-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.industry-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.industry-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const panel = document.getElementById('panel-' + tab.dataset.panel);
+    if (panel) panel.classList.add('active');
+  });
+});
+
+/* ═══════════════════════════════════════════════════════
+   RISK CALCULATOR
+═══════════════════════════════════════════════════════ */
+const sectorMultipliers = {
+  healthcare: { reg: 3.2, contracts: 1.5 },
+  finance:    { reg: 4.0, contracts: 1.8 },
+  professional: { reg: 1.8, contracts: 2.0 },
+  tech:       { reg: 1.5, contracts: 1.2 },
+  other:      { reg: 1.2, contracts: 1.0 }
+};
+
+function fmt(n) {
+  if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + Math.round(n / 1000) + 'K';
+  return '$' + n;
+}
+
+function updateCalc() {
+  const systems = parseInt(document.getElementById('aiCount').value);
+  const headcount = parseInt(document.getElementById('headcount').value);
+  const sector = document.getElementById('sectorSel').value;
+  const months = parseInt(document.getElementById('months').value);
+
+  document.getElementById('aiCountVal').textContent = systems + ' system' + (systems !== 1 ? 's' : '');
+  document.getElementById('headcountVal').textContent = headcount.toLocaleString() + ' employees';
+  document.getElementById('monthsVal').textContent = months + ' month' + (months !== 1 ? 's' : '');
+
+  const m = sectorMultipliers[sector];
+  const baseReg = systems * 45000 * m.reg * (1 + months / 24);
+  const loReg = Math.round(baseReg * 0.7);
+  const hiReg = Math.round(baseReg * 1.6);
+  const contracts = Math.max(1, Math.round(systems * m.contracts * (headcount / 200) * 0.4));
+  const baseGov = 27000 + systems * 1800;
+  const loGov = Math.round(baseGov * 0.9);
+  const hiGov = Math.round(baseGov * 1.3);
+
+  document.getElementById('regExposure').textContent = fmt(loReg) + '–' + fmt(hiReg);
+  document.getElementById('contractsRisk').textContent = contracts + '–' + (contracts + 3);
+  document.getElementById('govInvestment').textContent = fmt(loGov) + '–' + fmt(hiGov);
+}
+
+['aiCount', 'headcount', 'months'].forEach(id => {
+  document.getElementById(id).addEventListener('input', updateCalc);
+});
+document.getElementById('sectorSel').addEventListener('change', updateCalc);
+updateCalc();
+</script>
+</body>
+</html>
